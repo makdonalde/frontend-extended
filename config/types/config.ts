@@ -3,6 +3,7 @@ export interface BuildPath {
   entry: string;
   build: string;
   html: string;
+  src: string;
 }
 export interface BuildOptions {
   mode: BuildMode;
