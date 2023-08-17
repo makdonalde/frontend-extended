@@ -10,4 +10,4 @@ export interface ThemeContextProps {
 }
 export const ThemeContext = createContext<ThemeContextProps>({});
 
-export const THEME = "theme";
+export const THEME_LOCAL_STORAGE = "theme";

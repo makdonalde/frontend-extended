@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   padding: 20px;
+  color: var(--primary-color);
 }
 
 .links {
@@ -13,4 +14,9 @@
 
 .mainLink {
   margin-left: 10px;
+}
+
+.themeButton {
+  height: 40px;
+  width: 40px;
 }
