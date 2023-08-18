@@ -9,12 +9,13 @@
 .collapsed {
   width: var(--sidebar-width-collapsed);
 }
+
 .switchers {
   width: 100%;
   position: absolute;
   display: flex;
   justify-content: center;
-  bottom: 0px;
+  bottom: 0;
 }
 
 .lang {

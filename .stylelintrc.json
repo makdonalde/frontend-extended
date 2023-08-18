@@ -1,0 +1,7 @@
+{
+    "extends": "stylelint-config-standard-scss",
+    "rules": {
+        "no-missing-end-of-source-newline": null,
+        "selector-class-pattern": null
+      }
+}
