@@ -1,10 +1,8 @@
-import { Link } from 'react-router-dom';
 import './styles/index.scss';
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/SideBar';
 import { Suspense } from 'react';
-import { useTranslation } from 'react-i18next';
 import { AppRouter } from './providers/router';
 import { useTheme } from './providers/ThemeProvider';
 
