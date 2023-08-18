@@ -1,23 +1,27 @@
 .sidebar {
-  height: calc(100vh - var(--navbar-height));
-  width: var(--sidebar-width);
-  background: var(--inverted-bg-color);
-  position: relative;
-  transition: width 0.3s;
+    height: calc(100vh - var(--navbar-height));
+    width: var(--sidebar-width);
+    background: var(--inverted-bg-color);
+    position: relative;
+    transition: width 0.3s;
 }
 
 .collapsed {
-  width: var(--sidebar-width-collapsed);
+    width: var(--sidebar-width-collapsed);
 }
 
 .switchers {
-  width: 100%;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  bottom: 0;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 20px;
 }
 
-.lang {
-  margin-left: 20px;
+.toggle {
+    display: flex;
+    justify-content: center;
 }

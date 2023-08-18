@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { AppRoutes } from 'shared/config/routeConfig/routeConfig';
+import { AppRoutes, RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { useTranslation } from 'react-i18next';
 import cls from './Navbar.module.scss';
 
@@ -16,14 +16,14 @@ export const Navbar = ({ className }: NavbarProps) => {
             <div className={cls.links}>
                 <AppLink
                     theme={AppLinkTheme.SECONDARY}
-                    to={AppRoutes.MAIN}
+                    to={RoutePath.main}
                     className={cls.mainLink}
                 >
                     {t('Main')}
                 </AppLink>
                 <AppLink
                     theme={AppLinkTheme.RED}
-                    to={AppRoutes.ABOUT}
+                    to={RoutePath.about}
                     className={cls.mainLink}
                 >
                     {t('About site')}
