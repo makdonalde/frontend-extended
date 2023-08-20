@@ -25,7 +25,6 @@ export const Sidebar = ({ className }: SidebarProps) => {
         >
             <div className={cls.toggle}>
                 <Button
-                    // eslint-disable-next-line i18next/no-literal-string
                     data-testid="sidebar-btn"
                     onClick={onToggle}
                 >
