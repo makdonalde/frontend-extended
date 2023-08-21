@@ -7,5 +7,7 @@
   "Language": "Язык",
   "Key": "Ключ",
   "Loading": "Загрузка",
-  "PageNotFound": "Страница не найдена"
+  "PageNotFound": "Страница не найдена",
+  "Error occurs": "Произошла ошибка",
+  "Reload the page": "Перезагрузите страницу"
 }

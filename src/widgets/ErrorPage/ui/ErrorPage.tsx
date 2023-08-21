@@ -1,4 +1,3 @@
-/* eslint-disable i18next/no-literal-string */
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib';
 import { Button } from 'shared/ui';
@@ -17,9 +16,9 @@ export const ErrorPage = ({ className }: ErrorPageProps) => {
     };
     return (
         <div className={classNames(cls.ErrorPage, {}, [className])}>
-            <p>Error occurs</p>
+            <p>{t('Error occurs')}</p>
             <Button onClick={reloadPage}>
-                Reload the page
+                {t('Reload the page')}
             </Button>
         </div>
     );

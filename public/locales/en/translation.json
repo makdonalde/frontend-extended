@@ -9,5 +9,7 @@
   "Key": "Key",
   "MainPage": "MainPage",
   "Loading": "Loading...",
-  "PageNotFound": "Page not found"
+  "PageNotFound": "Page not found",
+  "Error occurs": "Error occurs",
+  "Reload the page": "Reload the page"
 }
