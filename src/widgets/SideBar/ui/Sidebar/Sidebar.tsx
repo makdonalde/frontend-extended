@@ -7,7 +7,7 @@ import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
-  className?: string;
+    className?: string;
 }
 export const Sidebar = ({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(false);
@@ -21,6 +21,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
             className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [
                 className,
             ])}
+
         >
             <div className={cls.toggle}>
                 <Button

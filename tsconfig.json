@@ -12,6 +12,13 @@
     // Компилятор будет обрабатывать не только TS файлы, но и JS файлы
     "allowJs": true,
     "moduleResolution": "node",
+    // Для абсолютного импорта
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "./src/*"
+      ]
+    },
     // esModuleInterop позволяет работать с пакетами, которые используют
     // common js как с обычными пакета с помощью import (require() module.export) = common js
     // import Moment from 'moment';
@@ -26,12 +33,7 @@
     // import * as React from 'react';
     // можно писать такой
     // import React from 'react';
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
-    "paths": {
-      "*": ["src/*"]
-    },
-    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+    "allowSyntheticDefaultImports": true
   },
   "ts-node": {
     "compilerOptions": {
@@ -39,12 +41,9 @@
     }
   },
   "include": [
-    "./config/jest/setupTests.ts",
+    "config/jest/setupTests.ts",
     "./src/**/*.ts",
     "./src/**/*.tsx",
+    "./src/setup.ts"
   ]
-
-  // "include": [
-  //   "src/app/types/global.d.ts" // Путь к вашему global.d.ts файлу
-  // ]
 }
