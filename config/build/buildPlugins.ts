@@ -10,7 +10,9 @@ export function buildPlugins({
     isDev,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
     const plugins = [
-        new BundleAnalyzerPlugin(),
+        new BundleAnalyzerPlugin({
+            openAnalyzer: false,
+        }),
         new HtmlWebpackPlugin({
             template: paths.html,
         }),

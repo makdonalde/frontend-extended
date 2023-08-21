@@ -10,15 +10,15 @@ i18n
     .use(initReactI18next)
     .init({
         fallbackLng: 'en',
-        debug: !!__IS_DEV__,
+        debug: __IS_DEV__,
 
         interpolation: {
             escapeValue: false, // not needed for react as it escapes by default
         },
+
         backend: {
             loadPath: '/locales/{{lng}}/{{ns}}.json',
         },
     });
-export const LANGUAGE_LOCAL_STORAGE = 'language';
 
 export default i18n;
