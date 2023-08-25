@@ -1,4 +1,4 @@
-.sidebar {
+.Sidebar {
     height: calc(100vh - var(--navbar-height));
     width: var(--sidebar-width);
     background: var(--inverted-bg-color);
@@ -11,17 +11,13 @@
 }
 
 .switchers {
-    width: 100%;
     position: absolute;
+    bottom: 20px;
     display: flex;
     justify-content: center;
-    bottom: 0;
-    flex-wrap: wrap;
-    align-items: center;
-    column-gap: 20px;
+    width: 100%;
 }
 
-.toggle {
-    display: flex;
-    justify-content: center;
+.lang {
+    margin-left: 20px;
 }

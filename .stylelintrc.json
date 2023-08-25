@@ -1,10 +1,10 @@
 {
   "extends": "stylelint-config-standard-scss",
   "rules": {
-    "indentation": [
-      4
-    ],
-    "no-missing-end-of-source-newline": null,
-    "selector-class-pattern": null
+    "indentation": [4],
+    "selector-class-pattern": null,
+    "no-missing-end-of-source-newline": null
+
+
   }
 }

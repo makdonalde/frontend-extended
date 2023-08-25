@@ -1,21 +1,25 @@
-/* eslint-disable i18next/no-literal-string */
+import { Button } from 'shared/ui/Button/Button';
 import { useEffect, useState } from 'react';
-import { Button } from 'shared/ui';
+import { useTranslation } from 'react-i18next';
 
+// Компонент для тестирования ErrorBoundary
 export const BugButton = () => {
     const [error, setError] = useState(false);
-    const onClick = () => {
-        setError(true);
-    };
+    const { t } = useTranslation();
+
+    const onThrow = () => setError(true);
 
     useEffect(() => {
-        if (error) { throw new Error(); }
+        if (error) {
+            throw new Error();
+        }
     }, [error]);
+
     return (
-        <div className="">
-            <Button onClick={onClick}>
-                Test throw error
-            </Button>
-        </div>
+        <Button
+            onClick={onThrow}
+        >
+            {t('throw error')}
+        </Button>
     );
 };

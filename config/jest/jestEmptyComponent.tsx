@@ -1,6 +1,6 @@
 import React from 'react';
 
-const jestEmptyComponent = () => {
+const jestEmptyComponent = function () {
     return <div />;
 };
 

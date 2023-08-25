@@ -1,0 +1,18 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n"],
+  "editor.codeActionsOnSave": {
+      "source.fixAll": true,
+      "source.fixAll.eslint":true
+  },
+  "css.validate": false,
+  "scss.validate": false,
+  "stylelint.config": null,
+  "stylelint.validate": [
+      "css",
+      "scss"
+  ],
+  "i18n-ally.keystyle": "nested",
+ 
+}
