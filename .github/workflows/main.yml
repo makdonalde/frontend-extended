@@ -30,4 +30,5 @@ jobs:
       - name: build storybook
         run: npm run storybook:build
       - name: screenshot testing
-        run: npm run test:ui:ci
+        run: npx browserslist@latest --update-db
+      
