@@ -6,13 +6,8 @@
     left: 0;
     z-index: var(--modal-z-index);
     opacity: 0;
+    color: var(--inverted-primary-color);
     pointer-events: none;
-    color: var(--primary-color);
-}
-
-.Modal.dark {
-    --inverted-bg-color: #2a2a2b;
-    --primary-color: #fff;
 }
 
 .overlay {
