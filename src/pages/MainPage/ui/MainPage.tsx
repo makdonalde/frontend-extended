@@ -1,14 +1,17 @@
-import { Counter } from 'entities/Counter';
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Input } from 'shared/ui';
 
 const MainPage = () => {
     const { t } = useTranslation();
-
+    const [value, setValue] = useState('');
+    const onChange = (val: string) => {
+        setValue(val);
+    };
     return (
         <div>
-            <Counter />
             {t('Главная страница')}
+            <Input placeholder="Ввведите текст" value={value} onChange={onChange} />
         </div>
     );
 };

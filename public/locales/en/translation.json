@@ -10,5 +10,8 @@
   "throw error": "throw error",
   "Главная": "Main",
   "О сайте": "About us",
-  "Toggle": "Переключить"
+  "Toggle": "Toggle",
+  "Enter": "Enter",
+  "password": "Password",
+  "username": "Username"
 }
