@@ -34,6 +34,10 @@
     font: var(--font-xl);
 }
 
+.disabled {
+    opacity: 0.5;
+}
+
 .backgroundInverted {
     background-color: var(--inverted-bg-color);
     color: var(--inverted-primary-color);

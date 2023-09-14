@@ -13,5 +13,7 @@
   "Toggle": "Toggle",
   "Enter": "Enter",
   "password": "Password",
-  "username": "Username"
+  "username": "Username",
+  "Вы ввели неправильный логин или пароль": "You passed incorrect login or password",
+  "Logout": "Logout"
 }

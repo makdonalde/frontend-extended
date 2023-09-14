@@ -1,10 +1,13 @@
 import { getLoginState } from 'features/AuthByUsername/model/selectors/getLoginState/getLoginState';
+import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
 import { loginActions } from 'features/AuthByUsername/model/slice/loginSlice';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from 'shared/lib';
-import { Button, Input } from 'shared/ui';
+import {
+    Button, Input, Typography, TypographyTheme,
+} from 'shared/ui';
 import cls from './LoginForm.module.scss';
 
 interface LoginFormProps {
@@ -13,7 +16,9 @@ interface LoginFormProps {
 export const LoginForm = memo(({ className }: LoginFormProps) => {
     const { t } = useTranslation();
     const dispatch = useDispatch();
-    const { username, password } = useSelector(getLoginState);
+    const {
+        username, password, isLoading, error,
+    } = useSelector(getLoginState);
     const onChangeUsername = useCallback((value: string) => dispatch(
         loginActions.setUsername(value),
     ), [dispatch]);
@@ -21,10 +26,13 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
         loginActions.setPassword(value),
     ), [dispatch]);
     const onLoginClick = useCallback(() => {
-
-    }, []);
+        dispatch(loginByUsername({ username, password }));
+    }, [dispatch, password, username]);
     return (
         <div className={classNames(cls.LoginForm, {}, [className])}>
+            {error && (
+                <Typography text={t('Вы ввели неправильный логин или пароль')} theme={TypographyTheme.ERROR} />
+            )}
             <Input
                 onChange={onChangeUsername}
                 value={username}
@@ -38,7 +46,7 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
                 placeholder={t('password')}
                 type="text"
             />
-            <Button onClick={onLoginClick} className={cls.loginBtn}>{t('Enter')}</Button>
+            <Button disabled={isLoading} onClick={onLoginClick} className={cls.loginBtn}>{t('Enter')}</Button>
         </div>
     );
 });
