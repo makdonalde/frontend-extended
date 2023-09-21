@@ -26,6 +26,13 @@
         }
     ],
     "profile": {
-        "name": "typicode"
+        "first": "dezzoko",
+        "lastname": "okko",
+        "age": 22,
+        "currency": "RUB",
+        "country": "Belarus",
+        "city": "Vitebsk",
+        "username": "admin",
+        "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
     }
 }

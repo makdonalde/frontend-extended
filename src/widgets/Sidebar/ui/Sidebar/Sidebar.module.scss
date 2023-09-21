@@ -6,11 +6,6 @@
     transition: width 0.3s;
 }
 
-.linkWrapper {
-    display: flex;
-    column-gap: 5px;
-}
-
 .lang {
     margin-left: 20px;
 }
@@ -31,10 +26,6 @@
     flex-direction: column;
 }
 
-.icon {
-    fill: var(--inverted-primary-color);
-}
-
 .collapsed {
     width: var(--sidebar-width-collapsed);
 
@@ -48,6 +39,7 @@
 
     .link {
         opacity: 0;
+        transition: 0.2s opacity;
         width: 0;
     }
 }
