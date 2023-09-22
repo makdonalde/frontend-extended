@@ -16,5 +16,6 @@
   "username": "Username",
   "Вы ввели неправильный логин или пароль": "You passed incorrect login or password",
   "Logout": "Logout",
-  "profile page": "Profile page"
+  "profile page": "Profile page",
+  "Edit": "Edit"
 }

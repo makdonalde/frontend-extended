@@ -1,6 +1,6 @@
 import { useTheme } from 'app/providers/ThemeProvider';
 import React, {
-    FC, useCallback, useEffect, useRef, useState,
+    FC, MutableRefObject, useCallback, useEffect, useRef, useState,
 } from 'react';
 import { classNames } from 'shared/lib';
 import { Portal } from '..';
@@ -19,7 +19,7 @@ export const Modal: FC<ModalProps> = (props) => {
     const { theme } = useTheme();
     const [isMounted, setIsMounted] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
-    const timeRef = useRef<ReturnType<typeof setTimeout>>();
+    const timeRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
     const closeHandler = useCallback(() => {
         if (onClose) {
             setIsClosing(true);
@@ -46,7 +46,7 @@ export const Modal: FC<ModalProps> = (props) => {
         };
     }, [isOpen, onKeyDown]);
 
-    const mods: Record<string, boolean> = {
+    const mods: Record<string, boolean | undefined> = {
         [cls.opened]: isOpen,
         [cls.closing]: isClosing,
     };

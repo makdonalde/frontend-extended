@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { AxiosInstance } from 'axios';
 import { User, userActions } from 'entities/User';
 import { ThunkConfig } from 'app/providers/StoreProvider';
 import { USER_LOCAL_STORAGE_KEY } from 'shared/constants/localStorage';
@@ -26,7 +25,7 @@ export const loginByUsername = createAsyncThunk<
 
             localStorage.setItem(USER_LOCAL_STORAGE_KEY, JSON.stringify(response.data));
             dispatch(userActions.setAuthData(response.data));
-            extra.navigate('/about');
+            extra.navigate?.('/about');
             return response.data;
         } catch (e) {
             console.log(e);
