@@ -1,20 +1,21 @@
 import {
     ChangeEvent, InputHTMLAttributes, memo, useEffect, useRef, useState,
 } from 'react';
-import { classNames } from 'shared/lib';
+import { classNames, Mods } from 'shared/lib';
 import cls from './Input.module.scss';
 
-type HtmlInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+type HtmlInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
 interface InputProps extends HtmlInputProps {
-    value?: string;
+    value?: string | number;
     onChange?: (value: string) => void;
     className?: string;
     placeholder?: string
     autofocus?: boolean
+    readonly?: boolean
 }
 export const Input = memo((props: InputProps) => {
     const {
-        className, value, autofocus, onChange, type = 'text', placeholder, ...other
+        className, value, readonly, autofocus, onChange, type = 'text', placeholder, ...other
     } = props;
 
     const inputRef = useRef<HTMLInputElement | null>(null);
@@ -41,8 +42,14 @@ export const Input = memo((props: InputProps) => {
     const onSelect = (e: any) => {
         setCaretPosition(e?.target?.selectionStart);
     };
+
+    const mods: Mods = {
+        [cls.readonly]: readonly,
+    };
+
+    const isCaretVisible = isFocused && !readonly;
     return (
-        <div className={classNames(cls.Input, {}, [className])}>
+        <div className={classNames(cls.Input, mods, [className])}>
             {placeholder && (
                 <div className={cls.placeholder}>
                     {` ${placeholder}>`}
@@ -58,9 +65,10 @@ export const Input = memo((props: InputProps) => {
                     onSelect={onSelect}
                     onBlur={onBlur}
                     className={cls.input}
+                    readOnly={readonly}
                     {...other}
                 />
-                {isFocused && (
+                {isCaretVisible && (
                     <span
                         style={{
                             left: `${caretPosition * 9}px`,

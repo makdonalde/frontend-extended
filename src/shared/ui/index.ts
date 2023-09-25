@@ -5,3 +5,4 @@ export * from './Modal/Modal';
 export * from './Portal/Portal';
 export * from './Input/Input';
 export * from './Typography/Typography';
+export * from './Avatar/Avatar';

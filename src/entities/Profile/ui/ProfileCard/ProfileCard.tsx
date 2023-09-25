@@ -1,40 +1,108 @@
-import { getProfileData } from 'entities/Profile/model/selectors/getProfileData/getProfileData';
-import { getProfileError } from 'entities/Profile/model/selectors/getProfileError/getProfileError';
-import { getProfileIsLoading } from 'entities/Profile/model/selectors/getProfileIsLoading/getProfileIsLoading';
+/* eslint-disable jsx-a11y/alt-text */
+import { Profile } from 'entities/Profile';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
-import { classNames } from 'shared/lib';
+import { classNames, Mods } from 'shared/lib';
 import {
-    Typography, Button, ButtonTheme, Input,
+    Typography, Input, Loader, TypographyTheme, TypographyAlign, Avatar,
 } from 'shared/ui';
 import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
     className?: string;
+    data?: Profile;
+    error?: string;
+    isLoading?: boolean;
+    readonly?: boolean;
+    onChangeLastname?: (value?: string) => void;
+    onChangeFirstname?: (value?: string) => void;
+    onChangeCity?: (value?: string) => void;
+    onChangeAge?: (value?: string) => void;
+    onChangeUsername?: (value?: string) => void;
+    onChangeAvatar?: (value?: string) => void;
+
 }
-export const ProfileCard = ({ className }: ProfileCardProps) => {
+export const ProfileCard = (props: ProfileCardProps) => {
+    const {
+        className, data, isLoading, error, onChangeLastname, onChangeFirstname, readonly, onChangeAge,
+        onChangeAvatar,
+        onChangeUsername,
+        onChangeCity,
+    } = props;
     const { t } = useTranslation();
-    const data = useSelector(getProfileData);
-    const isLoading = useSelector(getProfileIsLoading);
-    const error = useSelector(getProfileError);
-    return (
-        <div className={classNames(cls.ProfileCard, {}, [className])}>
-            <div className={cls.header}>
-                <Typography title={t('profile page')}></Typography>
-                <Button className={cls.editBtn} theme={ButtonTheme.OUTLINE}>
-                    {t('Edit')}
-                </Button>
+
+    if (isLoading) {
+        return (
+            <div className={classNames(cls.ProfileCard, {}, [className, cls.loader])}>
+                <Loader />
             </div>
-            <div className={cls.data}>
+        );
+    }
+    const mods: Mods = {
+        [cls.editing]: !readonly,
+    };
+
+    if (error) {
+        return (
+            <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+                <Typography
+                    title={t('Error occurs while loading profile')}
+                    text={t('Обновить страницу')}
+                    theme={TypographyTheme.ERROR}
+                    align={TypographyAlign.CENTER}
+                />
+            </div>
+        );
+    }
+    return (
+        <div className={classNames(cls.ProfileCard, mods, [className])}>
+            <div>
+                {data?.avatar && (
+                    <div className={cls.avatarWrapper}>
+                        <Avatar src={data.avatar} alt="avatar" />
+                    </div>
+                )}
                 <Input
                     value={data?.first}
-                    placeholder={t('Ваше имя')}
+                    placeholder={t('Your name')}
                     className={cls.input}
+                    onChange={onChangeFirstname}
+                    readonly={readonly}
+
                 />
                 <Input
                     value={data?.lastname}
-                    placeholder={t('Ваша фамилия')}
+                    placeholder={t('Your lastname')}
                     className={cls.input}
+                    onChange={onChangeLastname}
+                    readonly={readonly}
+                />
+                <Input
+                    value={data?.age}
+                    placeholder={t('Your age')}
+                    className={cls.input}
+                    onChange={onChangeAge}
+                    readonly={readonly}
+                />
+                <Input
+                    value={data?.city}
+                    placeholder={t('City')}
+                    className={cls.input}
+                    onChange={onChangeCity}
+                    readonly={readonly}
+                />
+                <Input
+                    value={data?.username}
+                    placeholder={t('Username')}
+                    className={cls.input}
+                    onChange={onChangeUsername}
+                    readonly={readonly}
+                />
+                <Input
+                    value={data?.avatar}
+                    placeholder={t('Pass avatar URL')}
+                    className={cls.input}
+                    onChange={onChangeAvatar}
+                    readonly={readonly}
                 />
             </div>
         </div>

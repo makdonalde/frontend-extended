@@ -17,5 +17,14 @@
   "Вы ввели неправильный логин или пароль": "You passed incorrect login or password",
   "Logout": "Logout",
   "profile page": "Profile page",
-  "Edit": "Edit"
+  "Edit": "Edit",
+  "Error occurs while loading profile": "Error occurs while loading profile",
+  "Cancel": "Cancel",
+  "Save": "Save",
+  "Your age": "Your age",
+  "City": "City",
+  "Username": "Username",
+  "Pass avatar URL": "Pass Avatar URL",
+  "Your name": "Your name",
+  "Your lastname": "Yuor lastname"
 }
