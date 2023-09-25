@@ -26,5 +26,6 @@
   "Username": "Имя пользователя",
   "Your name": "Ваше имя",
   "Your lastname": "Ваша фамилия",
-  "Pass avatar URL": "Введите ссылку на аватар"
+  "Pass avatar URL": "Введите ссылку на аватар",
+  "avatar": "аватар"
 }
