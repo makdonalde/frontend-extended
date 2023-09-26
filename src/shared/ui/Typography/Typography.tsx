@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { classNames, Mods } from 'shared/lib';
+import { classNames } from 'shared/lib';
 import cls from './Typography.module.scss';
 
 export enum TypographyTheme {

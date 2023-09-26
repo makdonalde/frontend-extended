@@ -1,4 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
+import { Country, CountrySelect } from 'entities/Country';
+import { Currency, CurrencySelect } from 'entities/Currency';
 import { Profile } from 'entities/Profile';
 import { useTranslation } from 'react-i18next';
 import { classNames, Mods } from 'shared/lib';
@@ -19,12 +21,15 @@ interface ProfileCardProps {
     onChangeAge?: (value?: string) => void;
     onChangeUsername?: (value?: string) => void;
     onChangeAvatar?: (value?: string) => void;
-
+    onChangeCurrency?: (currency: Currency) => void;
+    onChangeCountry?: (country: Country) => void
 }
 export const ProfileCard = (props: ProfileCardProps) => {
     const {
         className, data, isLoading, error, onChangeLastname, onChangeFirstname, readonly, onChangeAge,
         onChangeAvatar,
+        onChangeCountry,
+        onChangeCurrency,
         onChangeUsername,
         onChangeCity,
     } = props;
@@ -102,6 +107,18 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     placeholder={t('Pass avatar URL')}
                     className={cls.input}
                     onChange={onChangeAvatar}
+                    readonly={readonly}
+                />
+                <CurrencySelect
+                    className={cls.input}
+                    value={data?.currency}
+                    onChange={onChangeCurrency}
+                    readonly={readonly}
+                />
+                <CountrySelect
+                    className={cls.input}
+                    value={data?.country}
+                    onChange={onChangeCountry}
                     readonly={readonly}
                 />
             </div>

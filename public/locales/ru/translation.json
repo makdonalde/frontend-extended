@@ -27,5 +27,7 @@
   "Your name": "Ваше имя",
   "Your lastname": "Ваша фамилия",
   "Pass avatar URL": "Введите ссылку на аватар",
-  "avatar": "аватар"
+  "avatar": "аватар",
+  "Please choice currency": "Пожалуйста, выберите валюту",
+  "Please choice Country": "Пожалуйста выберите страну"
 }

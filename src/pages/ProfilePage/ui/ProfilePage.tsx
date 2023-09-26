@@ -1,3 +1,5 @@
+import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
 import {
     fetchProfileData,
     getProfileError, getProfileForm, getProfileIsLoading,
@@ -13,10 +15,7 @@ const reducers: ReducerList = {
     profile: profileReducer,
 };
 
-interface ProfilePageProps {
-    className?: string;
-}
-const ProfilePage = ({ className }: ProfilePageProps) => {
+const ProfilePage = () => {
     const dispatch = useAppDispatch();
     const data = useSelector(getProfileForm);
     const error = useSelector(getProfileError);
@@ -54,6 +53,17 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         }));
     }, [dispatch]);
 
+    const onChangeCurrency = useCallback((value: Currency) => {
+        dispatch(profileActions.updateProfile({
+            currency: value || '',
+        }));
+    }, [dispatch]);
+    const onChangeCountry = useCallback((country: Country) => {
+        dispatch(profileActions.updateProfile({
+            country: country || '',
+        }));
+    }, [dispatch]);
+
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <ProfilePageHeader />
@@ -67,6 +77,8 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
                 onChangeCity={onChangeCity}
                 onChangeAvatar={onChangeAvatar}
                 onChangeUsername={onChangeUsername}
+                onChangeCountry={onChangeCountry}
+                onChangeCurrency={onChangeCurrency}
                 readonly={readonly}
             />
         </DynamicModuleLoader>
