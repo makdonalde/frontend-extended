@@ -4,7 +4,9 @@ import { getLoginPassword } from 'features/AuthByUsername/model/selectors/getLog
 import { getLoginUsername } from 'features/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername';
 import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
 import { loginActions, loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
-import { memo, useCallback } from 'react';
+import {
+    ButtonHTMLAttributes, KeyboardEvent, memo, useCallback,
+} from 'react';
 import { useTranslation } from 'react-i18next';
 import {
     useSelector,
@@ -43,6 +45,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
         const result = await dispatch(loginByUsername({ username, password }));
         if (result.meta.requestStatus === 'fulfilled') onSuccess?.();
     }, [dispatch, onSuccess, password, username]);
+
     return (
         <DynamicModuleLoader reducers={initialReducers}>
             <div className={classNames(cls.LoginForm, {}, [className])}>
@@ -60,7 +63,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                     onChange={onChangePassword}
                     value={password}
                     placeholder={t('password')}
-                    type="text"
+                    type="password"
                 />
                 <Button disabled={isLoading} onClick={onLoginClick} className={cls.loginBtn}>{t('Enter')}</Button>
             </div>
