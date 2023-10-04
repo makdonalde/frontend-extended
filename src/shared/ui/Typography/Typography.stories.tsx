@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Typography, TypographyTheme } from '..';
+import { Typography, TypographySize, TypographyTheme } from '..';
 
 export default {
     title: 'shared/Typography',
@@ -53,4 +53,17 @@ Error.args = {
     title: 'Title lorem ipsun',
     text: 'Description Description Description Description',
     theme: TypographyTheme.ERROR,
+};
+
+export const SizeM = Template.bind({});
+SizeM.args = {
+    size: TypographySize.M,
+    title: 'Title lorem ipsun',
+    text: 'Description Description Description Description',
+};
+export const SizeL = Template.bind({});
+SizeL.args = {
+    size: TypographySize.L,
+    title: 'Title lorem ipsun',
+    text: 'Description Description Description Description',
 };

@@ -1,9 +1,11 @@
 {
   "": "",
+  "Article is not found": "Article is not found",
   "Cancel": "Cancel",
   "City": "City",
   "Edit": "Edit",
   "Enter": "Enter",
+  "Error occurs while loading article": "Error occurs while loading article",
   "Error occurs while loading profile": "Error occurs while loading profile",
   "First and lastname are required": "First and lastname are required",
   "Incorrect age provided": "Incorrect age provided",

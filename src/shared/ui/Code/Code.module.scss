@@ -1,0 +1,22 @@
+.Code {
+    position: relative;
+    border: 1px solid var(--primary-color);
+    display: block;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: var(--code-bg);
+    overflow: auto;
+
+    /* Установите явный размер блока .Code */
+}
+
+.copyBtn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1;
+}
+
+.icon {
+    stroke: var(--primary-color);
+}

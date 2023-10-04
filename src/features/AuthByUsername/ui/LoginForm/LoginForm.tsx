@@ -5,7 +5,7 @@ import { getLoginUsername } from 'features/AuthByUsername/model/selectors/getLog
 import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
 import { loginActions, loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import {
-    ButtonHTMLAttributes, KeyboardEvent, memo, useCallback,
+    memo, useCallback,
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import {

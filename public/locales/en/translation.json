@@ -30,5 +30,7 @@
   "avatar": "avatar",
   "Please choice currency": "Please choice currency",
   "Please choice Country": "Please choice country",
-  "Server error occured": "Server error occured"
+  "Server error occured": "Server error occured",
+  "Article is not found": "Article is not found",
+  "Error occurs while loading article": "Error occurs while loading article"
 }

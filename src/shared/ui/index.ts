@@ -7,3 +7,6 @@ export * from './Input/Input';
 export * from './Typography/Typography';
 export * from './Avatar/Avatar';
 export * from './Select/Select';
+export * from './Skeleton/Skeleton';
+export * from './Icon/Icon';
+export * from './Code/Code';

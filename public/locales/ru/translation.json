@@ -29,5 +29,7 @@
   "Pass avatar URL": "Введите ссылку на аватар",
   "avatar": "аватар",
   "Please choice currency": "Пожалуйста, выберите валюту",
-  "Please choice Country": "Пожалуйста выберите страну"
+  "Please choice Country": "Пожалуйста выберите страну",
+  "Article is not found": "Артикль не найден",
+  "Error occurs while loading article": "Произошла ошибка при загрузке статьи"
 }

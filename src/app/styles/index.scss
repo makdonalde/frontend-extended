@@ -18,7 +18,11 @@ body {
 }
 
 .page-wrapper {
+    overflow-y: auto;
+    height: calc(100vh - 50px);
     flex-grow: 1;
     padding: 20px;
+    padding-left: 40px;
+    width: 100%;
     color: var(--inverted-primary-color);
 }
