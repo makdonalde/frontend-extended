@@ -102,6 +102,42 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "kjlklj",
+      "id": "SCSjTgp"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "kjlklj",
+      "id": "aPbF7Ff"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "111",
+      "id": "irI-xXy"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "111",
+      "id": "vAZ1fNc"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "kk",
+      "id": "Ew-rUq4"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "HELLO",
+      "id": "TdzRO8z"
     }
   ],
   "users": [
@@ -109,23 +145,39 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://citaty.info/files/characters/5034.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1znVTPO8d_svbOmOl1pqQuzQA2cKD-p5j1YRe2cHd&s"
     }
   ],
-  "profile": {
-    "first": "jgh",
-    "lastname": "asf",
-    "age": 465,
-    "currency": "RUB",
-    "country": "Belarus",
-    "city": "Moscow",
-    "username": "admin213",
-    "avatar": "https://yt3.ggpht.com/ytc/AAUvwngFzM_Rf6MNwOnFcuphoj93k7VFjlIrj-kSMxbh=s900-c-k-c0x00ffffff-no-rj"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "jgh",
+      "lastname": "asf",
+      "age": 465,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "admin213",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1znVTPO8d_svbOmOl1pqQuzQA2cKD-p5j1YRe2cHd&s"
+    },
+    {
+      "id": "2",
+      "first": "de",
+      "lastname": "asf",
+      "age": 465,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "dezokoUser",
+      "avatar": "https://citaty.info/files/characters/5034.jpg"
+    }
+  ]
 }

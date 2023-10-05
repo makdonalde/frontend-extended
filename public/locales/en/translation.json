@@ -32,5 +32,9 @@
   "Please choice Country": "Please choice country",
   "Server error occured": "Server error occured",
   "Article is not found": "Article is not found",
-  "Error occurs while loading article": "Error occurs while loading article"
+  "Error occurs while loading article": "Error occurs while loading article",
+  "Comments": "Comments",
+  "There are no comments": "There are no comments",
+  "Write your comment": "Write your comment",
+  "Send": "Send"
 }
