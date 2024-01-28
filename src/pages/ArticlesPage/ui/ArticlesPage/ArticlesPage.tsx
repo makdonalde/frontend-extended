@@ -1,13 +1,15 @@
 /* eslint-disable max-len */
-import { Article, ArticleList, ArticleView } from 'entities/Article';
+import {
+    Article, ArticleList, ArticleView, ArticleViewSelector,
+} from 'entities/Article';
 import { getArticlesPageIsError, getArticlesPageIsLoading, getArticlesPageView } from 'pages/ArticlesPage/model/selectors/articlesPageSelectors';
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import {
     classNames, DynamicModuleLoader, ReducerList, useAppDispatch, useInitialEffect,
 } from 'shared/lib';
 import { fetchArticlesList } from '../../model/services/fetchArticleList/fetchArticleList';
-import { articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice';
+import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice';
 
 interface ArticlesPageProps {
     className?: string;
@@ -109,10 +111,16 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     const view = useSelector(getArticlesPageView);
     useInitialEffect(() => {
         dispatch(fetchArticlesList());
+        dispatch(articlesPageActions.initState());
     });
+
+    const onChangeView = useCallback((view:ArticleView) => {
+        dispatch(articlesPageActions.setView(view));
+    }, [dispatch]);
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div className={classNames('', {}, [className])}>
+                <ArticleViewSelector onViewClick={onChangeView} view={view} />
                 <ArticleList
                     isLoading={isLoading}
                     view={view}
