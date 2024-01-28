@@ -2,21 +2,20 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { ArticleList } from './ArticleList';
+import { Card } from './Card';
+import { Typography } from '..';
 
 export default {
-    title: 'pages/ArticleList',
-    component: ArticleList,
+    title: 'shared/Card',
+    component: Card,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ArticleList>;
+} as ComponentMeta<typeof Card>;
 
-const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
+const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
 
 export const Normal = Template.bind({});
-Normal.args = {};
-
-export const Dark = Template.bind({});
-Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Normal.args = {
+    children: <Typography title="tile" text="text" />,
+};

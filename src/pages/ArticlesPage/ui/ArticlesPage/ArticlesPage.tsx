@@ -1,7 +1,13 @@
 /* eslint-disable max-len */
-import { Article, ArticleList } from 'entities/Article';
+import { Article, ArticleList, ArticleView } from 'entities/Article';
+import { getArticlesPageIsError, getArticlesPageIsLoading, getArticlesPageView } from 'pages/ArticlesPage/model/selectors/articlesPageSelectors';
 import { memo } from 'react';
-import { classNames } from 'shared/lib';
+import { useSelector } from 'react-redux';
+import {
+    classNames, DynamicModuleLoader, ReducerList, useAppDispatch, useInitialEffect,
+} from 'shared/lib';
+import { fetchArticlesList } from '../../model/services/fetchArticleList/fetchArticleList';
+import { articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice';
 
 interface ArticlesPageProps {
     className?: string;
@@ -13,7 +19,20 @@ const mock = {
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
     createdAt: '26.02.2022',
+    user: {
+        id: '1',
+        username: 'Gena',
+        avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1znVTPO8d_svbOmOl1pqQuzQA2cKD-p5j1YRe2cHd&s',
+    },
     type: [
+        'IT',
+        'Science',
+        'IT-Structure',
+        'IT-Structure',
+        'IT-Structure',
+        'IT',
+        'IT',
+        'IT',
         'IT',
     ],
     blocks: [
@@ -77,11 +96,30 @@ const mock = {
         },
     ],
 } as Article;
+
+const reducers: ReducerList = {
+    articlesPage: articlesPageReducer,
+};
 const ArticlesPage = ({ className }: ArticlesPageProps) => {
+    const dispatch = useAppDispatch();
+    const articles = useSelector(getArticles.selectAll);
+    const isLoading = useSelector(getArticlesPageIsLoading);
+    const error = useSelector(getArticlesPageIsError);
+
+    const view = useSelector(getArticlesPageView);
+    useInitialEffect(() => {
+        dispatch(fetchArticlesList());
+    });
     return (
-        <div className={classNames('', {}, [className])}>
-            <ArticleList articles={[mock]} />
-        </div>
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+            <div className={classNames('', {}, [className])}>
+                <ArticleList
+                    isLoading={isLoading}
+                    view={view}
+                    articles={articles}
+                />
+            </div>
+        </DynamicModuleLoader>
     );
 };
 export default memo(ArticlesPage);

@@ -10,3 +10,4 @@ export * from './Select/Select';
 export * from './Skeleton/Skeleton';
 export * from './Icon/Icon';
 export * from './Code/Code';
+export * from './Card/Card';

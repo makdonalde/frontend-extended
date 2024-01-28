@@ -27,6 +27,8 @@
   "Your lastname": "Your lastname",
   "Your name": "Your name",
   "avatar": "avatar",
+  "back-to-article": "back-to-article",
+  "chitat-dalee": "chitat-dalee",
   "password": "password",
   "profile page": "profile page",
   "throw error": "throw error",
@@ -46,6 +48,7 @@
   "Обновить страницу": "Обновить страницу",
   "Произошла непредвиденная ошибка": "Произошла непредвиденная ошибка",
   "Страница не найдена": "Страница не найдена",
+  "Читать далее": "Читать далее",
   "Яз": "Яз",
   "Язык": "Язык"
 }

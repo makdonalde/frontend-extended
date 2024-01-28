@@ -24,6 +24,11 @@ const article: Article = {
     views: 1022,
     createdAt: '26.02.2022',
     type: [ArticleType.IT],
+    user: {
+        id: '1',
+        username: 'Gena',
+        avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1znVTPO8d_svbOmOl1pqQuzQA2cKD-p5j1YRe2cHd&s',
+    },
     blocks: [
         {
             id: '1',

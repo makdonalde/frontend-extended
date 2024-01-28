@@ -9,6 +9,7 @@
   "Обновить страницу": "Reload page",
   "throw error": "throw error",
   "Главная": "Main",
+  "chitat-dalee": "Read more...",
   "О сайте": "About us",
   "Toggle": "Toggle",
   "Enter": "Enter",
@@ -36,5 +37,6 @@
   "Comments": "Comments",
   "There are no comments": "There are no comments",
   "Write your comment": "Write your comment",
-  "Send": "Send"
+  "Send": "Send",
+  "back-to-article": "Back to article list"
 }

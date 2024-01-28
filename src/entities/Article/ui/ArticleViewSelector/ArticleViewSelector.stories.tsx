@@ -2,17 +2,17 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { ArticleListItem } from './ArticleListItem';
+import { ArticleViewSelector } from './ArticleViewSelector';
 
 export default {
-    title: 'pages/ArticleListItem',
-    component: ArticleListItem,
+    title: 'pages/ArticleViewSelector',
+    component: ArticleViewSelector,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ArticleListItem>;
+} as ComponentMeta<typeof ArticleViewSelector>;
 
-const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListItem {...args} />;
+const Template: ComponentStory<typeof ArticleViewSelector> = () => <ArticleViewSelector />;
 
 export const Normal = Template.bind({});
 Normal.args = {};
